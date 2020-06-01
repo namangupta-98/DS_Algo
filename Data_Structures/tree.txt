@@ -1,0 +1,27 @@
+//A data structure that consists of nodes in a parent/child relationship.
+//Root: top node of a tree
+//Child: node directly connected to another node when moving away from the root.
+//Parent: the converse notion of a child.
+//Siblings: a group of nodes with similar parents.
+//Leaf: node with no children.
+//Edge: connection between one node & another.
+
+//Applications: 
+//1. HTML DOM
+//2. Network Routing
+//3. File Management
+//4. Artificial Intelligence (Tic-Tac-Toe)
+//5. JSON
+// etc
+
+//Binary Search Tree
+// ** At most 2 children (0,1,2)
+// ** left child < parent < right child
+
+//      10   count = 2
+//   /      \
+//  6        13
+// / \      / \  
+//3  8     11  15
+//   /
+//  7
