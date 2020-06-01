@@ -20,8 +20,21 @@
 
 //      10   count = 2
 //   /      \
-//  6        13
+//  6        13 
 // / \      / \  
-//3  8     11  15
+//5  8     11  15
 //   /
 //  7
+
+//Traversing (can be done on any tree)
+//Breadth First Search
+//queue:[]
+//data:[10,6,13,5,8,11,15,7]
+
+//Depth First Search
+//Pre-Order: root left right  [10 6 5 8 7 13 11 15]
+//Post-Order: left right root [5 7 8 6 11 15 13 10]
+//In-Order: left root right   [5 6 7 8 10 11 13 15]  can give sorted values for bst in ascending order.
+
+//When tree is broader use DFS
+//When tree is deeper use BFS

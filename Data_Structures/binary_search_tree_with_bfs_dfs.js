@@ -57,9 +57,9 @@ class BinarySearchTree{
         }
         return false;
     }
-    bfs(){ //breadth first search
-        let data = [], queue = [], node = this.root;
-        queue.push(node);
+    bfs(){//breadth first search 
+        let data = [], queue = [], node;
+        queue.push(this.root);
         while(queue.length){
             node = queue.shift();
             data.push(node.val);
@@ -69,37 +69,49 @@ class BinarySearchTree{
         return data;
     }
     //depth first search
-    dfs_preorder(){ //root left right
+    dfs_preorder(){ // root left right 
         let data = [];
         function traverse(node){
             data.push(node.val);
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
+            if(node.left){
+                traverse(node.left);
+            } 
+            if(node.right) {
+                traverse(node.right);
+            }
         }
         traverse(this.root);
         return data;
     }
-    dfs_postorder(){ //left right root
+    dfs_postorder(){ // left right root 
         let data = [];
         function traverse(node){
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
+            if(node.left){
+                traverse(node.left);
+            } 
+            if(node.right) {
+                traverse(node.right);
+            }
             data.push(node.val);
         }
         traverse(this.root);
         return data;
     }
-    dfs_inorder(){//left root right
+    dfs_inorder(){ // left root right  
         let data = [];
         function traverse(node){
-            if(node.left) traverse(node.left);
+            if(node.left){
+                traverse(node.left);
+            } 
             data.push(node.val);
-            if(node.right) traverse(node.right);
+            if(node.right) {
+                traverse(node.right);
+            }
         }
         traverse(this.root);
         return data;
     }
-
+     
 }
 
 let tree = new BinarySearchTree();
@@ -111,12 +123,19 @@ tree.insert(13);
 tree.insert(11);
 tree.insert(15);
 
-
 //      10   count = 2
 //   /      \
-//  6        13
+//  6        13 
 // / \      / \  
 //5  8     11  15
 
 //insertion : O(n), Θ(log n), Ω(log n)
 //searching : O(n), Θ(log n), Ω(log n)
+
+//10
+//  \
+//  13
+//   \
+//    15
+//     \
+//      20
