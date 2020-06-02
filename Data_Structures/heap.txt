@@ -1,0 +1,56 @@
+//Heap: It is a special tree based data structure in which tree is complete binary tree.
+//Binary heap: very similar to binary search tree, but with some different rules.
+
+//Each parent has at most 2 child node.
+
+//Types of Binary Heap:
+//MaxBinaryHeap: parent node > child node(left,right)
+//MinBinaryHeap: parent node < child node(left,right)
+
+//As compact as possible
+
+//left child is always filled out first
+
+// Binary heaps are used to implement Priority Queue which are commonly used data structure. 
+
+//Also used in graph Traversal.
+
+// MaxBinaryHeap
+//     41
+//   /    \
+//  39    33
+// / \   /  \
+//18 27 12  11
+/// \
+//5  6
+//[41,39,33,18,27,12,11,5,6]
+// 0  1  2  3  4  5  6  7 8~ n
+
+//3 ~ 18 parent n
+//7 ~ 5 left 2n + 1
+//8 ~ 6 right 2n + 2
+
+//1 ~ 39 parent n
+//3 ~ 18 left   2n + 1
+//4 ~ 27 right  2n + 2
+
+//2 ~ 33 parent n
+//5 ~ 12 left  2n + 1
+//6 ~ 11 right 2n + 2
+
+//finding parent
+// Math.floor((n-1)/2)
+
+
+// MinBinaryHeap
+//     5
+//   /    \
+//  39    10
+// / \   /  \
+//48 47 42   33
+
+
+//Easy way to store binary heap is list/array.
+
+
+
