@@ -1,0 +1,23 @@
+//hash tables also known as hash map.
+// used to store key-value pairs. keys are not in particular ordered.
+//Fast: adding, removing & finding values.
+//Every language has some sort of hash tables because of their speed, hash tables are very commonly used.
+
+//Inorder to lookup values by key, we need to convert keys into valid array indices. 
+//A fucntion that performs this task is called hash function.
+
+//Good Hash Function Qualities:
+//1. fast (i.e constant time)
+//2. doesn't cluster outputs at specific indices, but distributes them uniformly.
+//3. Deterministic (same input yeilds same output)
+
+//There are many strategies for dealing with collisions, but most common:
+//1. Separate Chaining
+//2. Linear Probing
+
+//Separate Chaining: with separate chaining, at each index in our array we store values using a more sophisticated data structure(e.g: array, linkedlist)
+
+//Linear Probing: when we find a collision, we search through the array to find the next empty slot.
+//Unlike separate chaining this allows us to store a single key-value pair at each index.
+
+//Complexity: Θ(1)  Ω(1) O(n)

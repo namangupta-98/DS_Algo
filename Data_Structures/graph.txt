@@ -1,0 +1,41 @@
+//A graph data structure consists of a finite (and possinly mutable) set of vertices or nodes or point, together with  a set of inordered pairs 
+//of these vertices for an undirected graph or a set of ordered pairs for a directed graph.
+
+// Graph = Nodes + Connections
+
+//USES:
+//Social Networking
+// Location Mapping
+//Routing Algorithms
+//Visual hierarchy
+//File system optimization, etc.
+
+//Recommendations:
+//people also watched
+//you might also like
+//People you might know
+//frequently bought together
+
+//Graph terms:
+//* vertex: node 
+//* edge: connection between nodes
+//* weighted/unweighted graphs: values assigned to distances between vertices
+//*directed/undirected graphs: direction assigned to distanced vertices.
+
+//2 ways to store graph:
+//a. Adjacency Matrix
+//b. Adjacency List
+
+//V = vertex , E = edge
+
+//Operation       Adjacency List        Adjacency Matrix
+//Add Vertex           O(1)                    O(V^2)
+//Add Edge             O(1)                    O(1)
+//remove vertex        O(V + E)                O(V^2)
+//remove edge          O(E)                    O(1)
+//Query                O(V + E)                O(1)
+//Storage              O(V + E)                O(V^2)
+
+//Adjacency_List: less space, faster to iterate over all edges, can slower to lookup to specific edge;
+//Adjacency_Matrix: more space, slower to iterate over all edges, faster to lookup to specific edge;
+// We will use Adjacency List because most data in real world tends to lend itself to sparser or larger graphs.
