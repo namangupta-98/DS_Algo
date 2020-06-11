@@ -1,3 +1,27 @@
+//Dijkstra'S Algorithm (by Edsger Dijkstra) ~ Shortest Path Algorithm
+//finds shortest path between two vertices on a graph.
+
+//Use:
+//* Maps/Gps
+//* Airline tickets: cheapest route
+//* 
+
+// class PriorityQueue{
+//     constructor(){
+//         this.values = [];
+//     }
+//     enqueue(val,priority){
+//         this.values.push({val,priority});
+//         this.sort();
+//     }
+//     dequeue(){
+//         return this.values.shift();
+//     }
+//     sort(){
+//         this.values.sort((a,b) => a.priority - b.priority);
+//     }
+// }
+
 class Node{
     constructor(val,priority){
         this.val = val;
@@ -83,44 +107,50 @@ class WeightedGraph{
         const nodes = new PriorityQueue();
         const distances = {};
         const previous = {};
-        let smallest;
         let path = [];
-        //initial case
+        let smallest;
+        
+        //intial case
         for(let vertex in this.adjacencyList){
             if(vertex === start){
                 distances[vertex] = 0;
                 nodes.enqueue(vertex,0);
             }else{
                 distances[vertex] = Infinity;
-                nodes.enqueue(vertex,Infinity);
+                nodes.enqueue(vertex,Infinity);   
             }
             previous[vertex] = null;
         }
-        while(nodes.values.length){ // until there is some node to visit
-            smallest =  nodes.dequeue().val;
+        
+        while(nodes.values.length){
+            //until there is some node to visit
+            smallest = nodes.dequeue().val;
             if(smallest === finish){
-                // done, build the path and return
+                //done, build the path and return
                 while(previous[smallest]){
                     path.push(smallest);
                     smallest = previous[smallest];
                 }
                 break;
             }
-            if(smallest || distances[smallest] !== Infinity){
+            if(smallest || distances[smallest]!==Infinity){
                 for(let neighbor in this.adjacencyList[smallest]){
-                    //find neighboring node
-                    let nextNode = this.adjacencyList[smallest][neighbor];
-                    //calculate distance to the neighboring node
-                    let candidate = distances[smallest] + nextNode.weight;
-                    let nextNeighbor = nextNode.node;
-                    if(candidate<distances[nextNeighbor]){
-                        //new smallest distance
-                        distances[nextNeighbor] = candidate;
-                        //how we got to neighbor
-                        previous[nextNeighbor] = smallest;
-                        // enqueue with new priority
-                        nodes.enqueue(nextNeighbor,candidate);
-                    }
+                        //find neighbor node
+                        let nextNode = this.adjacencyList[smallest][neighbor];
+                        //calculate distance to the neighboring node
+                        let candidate = distances[smallest] + nextNode.weight;
+    
+                        let nextNeighbor = nextNode.node;
+                        if(candidate< distances[nextNeighbor]){
+                            //new smallest distances
+                            distances[nextNeighbor] = candidate;
+
+                            //how we got to neighbor
+                            previous[nextNeighbor] = smallest;
+
+                            //enqueue with new priority
+                            nodes.enqueue(nextNeighbor,candidate);
+                        }
                 }
             }
         }
