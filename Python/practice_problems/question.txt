@@ -1,0 +1,11 @@
+1. Find the duplicate in an array of N integers.
+Input: [1,2,3,1,3,6,6]
+Output: 1 3 6
+
+2. Sort an array which contains 0's, 1's and 2's without using extra space or sorting algorithm. (Dutch-National-Flag-Algorithm)
+Input: [0,1,1,0,1,2,1,2,0,0,0,1]
+Output: [0,0,0,0,0,1,1,1,1,1,2,2]
+
+3. Find repeating and missing elements in array.
+Input: [3,1,4,3,6,4]
+Output: Missing- 2,5 ; Repeating- 3,4
