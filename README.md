@@ -1,2 +1,2 @@
 # DS_Algo
-Implementation of Data Structures and Algorithms
+Implementation of Data Structures, Algorithms, and coding|practice problems. 
