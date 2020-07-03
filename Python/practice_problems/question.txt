@@ -38,4 +38,32 @@ Output:
 [1,0,1]
 ]
 
-8.
+8. Pascal's Triangle
+Input:
+6
+Output:
+      1
+     1 1
+    1 2 1
+   1 3 3 1
+  1 4 6 4 1
+1 5 10 10 5 1
+
+9. Next Permutation
+Input:
+4, 5, 6, 3, 2, 1
+Output: 
+4, 6, 1, 2, 3, 5
+Input:
+1, 2, 3
+Output:
+1, 3, 2
+
+10. Inversion of array (merge sort)
+Input: [5, 4, 6, 2, 4]
+Output: inv_count = 6
+constraints: a[i] > a[j], i < j
+
+11. Stock Buy & Sell (to maximize profit)
+Input: [100,180,260,310,40,535,695]
+Output:
